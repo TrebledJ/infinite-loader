@@ -1,0 +1,14 @@
+---
+eleventyExcludeFromCollections: true
+permalink: all-posts.json
+---
+[
+  {# Generate sample posts. Remove this for-loop at your own discretion. #}
+  {% for num in range(0, 20) %}
+    "Post {{num}}",
+  {% endfor %}
+
+  {% for post in collections.all %}
+    "{{ post.url }}"{% if not forloop.last %},{% endif %}
+  {% endfor %}
+]

@@ -1,0 +1,21 @@
+---
+title: Posts
+layout: layouts/base.njk
+permalink: /infinite-posts/index.html
+---
+
+<div class="post-list"></div>
+<script src="/js/infinite-loader.js"></script>
+<script>
+    $(async function () {
+        InfiniteLoader({
+            data: '/all-posts.json',
+            items: {
+                num: 10,
+                after: 2,
+            },
+            html: item => `<p>${item}</p><br/>`,
+        });
+    });
+</script>
+<div class="infinite-spinner"></div>

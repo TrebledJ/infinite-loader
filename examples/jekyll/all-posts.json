@@ -1,0 +1,15 @@
+---
+layout: none
+---
+[
+  {% comment %}
+  Generate sample posts. Remove this for-loop at your own discretion.
+  {% endcomment %}
+  {% for num in range(0, 20) %}
+  "Post {{num}}",
+  {% endfor %}
+
+  {% for post in site.posts %}
+  "{{ post.url }}"{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
