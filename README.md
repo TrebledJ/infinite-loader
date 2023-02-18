@@ -37,13 +37,13 @@ See it rollin':
 
 ### Parameters
 
-* `data`: Path to your JSON data. This data should be a JSON **array**. Array elements can be *any* JSON data, which can be passed to a custom data-to-HTML conversion function (see the `html` parameter).
+* `data`: Path to your JSON data. This data should be a JSON **array**. Array elements can be *any* JSON data, which will be passed to a custom data-to-HTML conversion function (see the `html` parameter).
 * `items.num`: Initial number of items to load. Defaults to 10.
 * `items.after`: Subsequent number of items to load. Subsequent loads are triggered when the user scrolls beyond a certain threshold. Defaults to `items.num`.
 * `items.max`: Maximum number of items to load. Loading stops indefinitely after loading this many items. Unlimited by default.
 * `append`: The id/class element to append your HTML to. Defaults to `.post-list` (i.e. `class="post-list"`).
 * `html`: A string or converter function. If `typeof html ===`
-    * `"string"`: then `html` be appended directly to the target element.
+    * `"string"`: then `html` will be appended directly to the target element.
     * `"function"`: then `html` will be used to convert your JSON data to HTML. An example function is:
     ```js
     (item, index) => {
